@@ -26,3 +26,22 @@ source myenv/bin/activate
 # Atualizar o gerenciador de pacotes e instalar bibliotecas
 pip install --upgrade pip
 pip install numpy pillow tflite-runtime
+```
+
+### 2. Organizando os Arquivos
+Certifique-se de que os seguintes arquivos foram transferidos para o mesmo diretório na placa:
+* `model.tflite`: O modelo de rede neural já quantizado para INT8.
+* `teste_roupa.png`: Uma imagem de teste gerada a partir do dataset original.
+* `inferencia.py`: O script de execução principal.
+
+### 3. Rodando a Inferência
+Com o ambiente virtual ativado (`myenv`), execute o script. Ele irá carregar a imagem, aplicar as escalas de quantização inversas e exibir a predição no terminal:
+
+```bash
+python3 inferencia.py
+```
+
+## 📝 Resultados
+A saída no terminal demonstrará a classe predita pelo modelo (ex: "Casaco", "Pullover") juntamente com a sua respectiva porcentagem de confiança matemática, processada inteiramente pela CPU da SBC Labrador.
+
+---
